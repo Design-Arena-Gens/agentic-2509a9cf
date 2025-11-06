@@ -1,0 +1,32 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --bg: #0a0b0f;
+  --surface: #0f1117;
+  --accent-blue: #00E5FF;
+  --accent-green: #39FF88;
+}
+
+html { color-scheme: dark; }
+body {
+  @apply bg-[#0a0b0f] text-white antialiased;
+}
+
+/***** Gradient mesh background helpers *****/
+.bg-grid {
+  background-image: linear-gradient(rgba(255,255,255,0.06) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255,255,255,0.06) 1px, transparent 1px);
+  background-size: 40px 40px, 40px 40px;
+  background-position: -1px -1px, -1px -1px;
+}
+
+.focus-ring {
+  @apply focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accentBlue focus-visible:ring-offset-2 focus-visible:ring-offset-background;
+}
+
+/***** Scrollbar *****/
+*::-webkit-scrollbar { width: 10px; height: 10px; }
+*::-webkit-scrollbar-thumb { background: rgba(255,255,255,0.2); border-radius: 8px; }
+*::-webkit-scrollbar-track { background: transparent; }
